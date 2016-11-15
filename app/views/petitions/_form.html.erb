@@ -1,0 +1,61 @@
+
+  <div class="form">
+  <%= form_for(petition) do |f| %>
+    <% if petition.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(petition.errors.count, "error") %> prohibited this petition from being saved:</h2>
+
+        <ul>
+        <% petition.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'Nombre' %>
+    </div>
+
+    <div class="field">
+      <%= f.number_field :identity, placeholder: 'Cedula' %>
+    </div>
+
+    <div class="field">
+      <%= f.date_select :date, placeholder: 'Fecha'  %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :email, placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :direccion, placeholder: 'Direccion'  %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :country, placeholder: 'Pais'  %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :city, placeholder: 'Ciudad'  %>
+    </div>
+
+    <div class="field">
+      <%= f.text_area :description, placeholder: 'Descripcion' %>
+    </div>
+
+    <div class="field checkbox">
+      <label for="state">Resuelta</label>    
+      <%= f.check_box :state %>
+    </div>  
+
+    <div class="field">
+      <%= f.text_area :amswer, placeholder: 'Respuesta' %>
+    </div>
+
+    <div class="controls">
+      <%= f.submit class: 'btn medium blue' %>
+    </div>
+  <% end %>
+  </div>

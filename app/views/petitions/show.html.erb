@@ -1,0 +1,55 @@
+ <div class="container">  
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @petition.name %>
+  </p>
+
+  <p>
+    <strong>Cedula:</strong>
+    <%= @petition.identity %>
+  </p>
+
+  <p>
+    <strong>Fecha:</strong>
+    <%= @petition.date %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @petition.email %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @petition.direccion %>
+  </p>
+
+  <p>
+    <strong>Pais:</strong>
+    <%= @petition.country %>
+  </p>
+
+  <p>
+    <strong>Ciudad:</strong>
+    <%= @petition.city %>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @petition.description %>
+  </p>
+
+  <p>
+    <strong>Respuesta:</strong>
+    <%= @petition.amswer %>
+  </p>
+
+</div>
+
+<div class="actions">
+<%= link_to 'Edit', edit_petition_path(@petition) %> |
+<%= link_to 'Back', petitions_path %>
+</div>
+

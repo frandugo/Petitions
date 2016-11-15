@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{ font-family: 'Roboto', sans-serif; }
+*{ box-sizing: border-box; }
+header{
+	padding: 40px 0;
+	text-align: center;
+}
+.dashboard{
+	margin: 0 auto;
+	width: 95%;
+}
+.container{
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	margin: 0 auto 20px;
+	padding: 20px;
+	width: 70%;
+}
+.title{
+	font-weight: 100;
+	font-size: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.field{ 
+	margin-bottom: 20px !important;
+	overflow: hidden;
+}
+.form{ width: 100%; }
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="number"]{
+	border: 1px solid #ccc;
+	font-weight: 100;
+	font-size: 16px;
+	padding: 10px;
+	width: 100%;
+}
+.form input[type="text"]::-webkit-input-placeholder { font-weight: 100; }
+.form input[type="text"]::-moz-placeholder { font-weight: 100; }
+.form input[type="text"]:-ms-input-placeholder { font-weight: 100; }
+.form input[type="text"]:-moz-placeholder { font-weight: 100; }
+.form select{
+	height: 40px;
+	float: left;
+	margin-right: 0.33%;
+	width: 33%;
+}
+	.form select:last-child{ margin-right: 0; }
+.form textarea{
+	border: 1px solid #ccc;
+	font-weight: 100;
+	font-size: 16px;
+	min-height: 200px;
+	padding: 10px;
+	resize: none;
+	width: 100%;
+}
+table{
+	width: 100%;
+    text-align: center;
+}
+table thead tr th{ 
+	background: #E0E0E0;
+	width: 11.11%; 
+}
+table tbody tr{
+	background: #F3F3F3;
+	border: 1px solid #f3f3f3;
+}
+.controls{
+	margin: 0 auto;
+	width: 90%;
+}
+.form .controls{
+	margin-bottom: 20px;
+	width: 100%;
+}
+.checkbox label{ 
+	float: left; 
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.btn{
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+}
+.blue{
+	background: #1188D4;
+	color: #FFF;
+}
+.medium{
+	font-weight: 100;
+	font-size: 18px;
+	padding: 10px 20px;
+}
