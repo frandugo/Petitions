@@ -1,0 +1,60 @@
+ <div class="buttons">
+	<%= link_to 'Registrar peticion', new_petition_path, class: 'left blue' %>
+	<% if user_signed_in? %>
+		<%= link_to 'Salir', destroy_user_session_path, :method => :delete, class: 'right red' %>
+		<%= link_to 'Ver Peticiones', petitions_path, class: 'right' %>
+	<% else %>		
+		<%= link_to 'Login Administradores', new_user_session_path, class: 'right' %>
+	<% end %>
+ </div>
+ <div class="container">
+	<div class="search">
+		<%#= search_form_for @search do |f| %>
+
+		<%= search_form_for @search, url: search_petitions_path, html: { method: :post }  do |f| %>
+
+		  <%= f.label :name_cont, "Buscar peticiones por nombre"%>
+		  <%= f.search_field :name_cont %>
+
+		  <%= f.submit "Buscar Peticion" %>
+
+		<% end %>
+	</div>
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th><%= sort_link @search, :name, "Nombre" %></th>
+	      <th>Cedula</th>
+	      <th><%= sort_link @search, :date, "Fecha" %></th>
+	      <th>Email</th>
+	      <th>Direccion</th>
+	      <th>Descripcion</th>
+	      <th><%= sort_link @search, :state, "Estado" %></th>
+		  <th></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @petitions.each do |petition| %>
+	      <tr>
+	        <td><%= petition.name %></td>
+	        <td><%= petition.identity %></td>
+	        <td><%= petition.date %></td>
+	        <td><%= petition.email %></td>
+	        <td><%= petition.direccion %></td>
+	        <td><%= petition.description %></td>
+	        <td>
+	          <% if petition.state == true %>
+	            <span class="close">Cerrada</span>
+	          <% else %>
+	             <span class="open">Abierta</span>
+	          <% end %>  
+	        </td>
+	        <td><%= link_to 'Ver Respuesta', petition %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+ </div>

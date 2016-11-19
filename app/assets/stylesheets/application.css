@@ -16,10 +16,45 @@
 
 body{ font-family: 'Roboto', sans-serif; }
 *{ box-sizing: border-box; }
+#notice{
+	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+}
 header{
 	padding: 40px 0;
 	text-align: center;
 }
+.buttons{
+    margin: 0 auto;
+    overflow: hidden;
+    width: 70%;
+}
+	.buttons a{
+		padding: 10px 20px;
+	    background: #f7f7f7;
+	    border-top: 1px solid #ccc;
+	    border-left: 1px solid #ccc;
+	    border-right: 1px solid #ccc;
+	    text-decoration: none;
+	    transition: linear 0.2s all;
+	}
+		.buttons a:hover{ background: #f3f3f3; }
+
+	.buttons a.left{ float: left; }
+	.buttons a.right{ float: right; }
+
+	.buttons a.blue{  
+		border: 1px solid #1188D4;
+		background: #1188D4; 
+	}
+	.buttons a.red{
+	    border: 1px solid #FF2626;
+	    background: #FF2626;
+	    color: #FFF;
+	}
 .dashboard{
 	margin: 0 auto;
 	width: 95%;
@@ -31,12 +66,18 @@ header{
 	padding: 20px;
 	width: 70%;
 }
+
 .title{
-	font-weight: 100;
-	font-size: 20px;
+	font-weight: 300;
+	font-size: 25px;
+	line-height: 35px;
 	margin-bottom: 40px;
 	text-align: center;
 }
+	.title span{ 
+		font-weight: 100;
+		font-size: 18px; 
+	}
 .field{ 
 	margin-bottom: 20px !important;
 	overflow: hidden;
@@ -72,17 +113,31 @@ header{
 	width: 100%;
 }
 table{
+	border: none;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
 	width: 100%;
     text-align: center;
 }
+table thead tr{ background: #E0E0E0; }
 table thead tr th{ 
-	background: #E0E0E0;
+	padding: 20px 5px;
 	width: 11.11%; 
 }
-table tbody tr{
-	background: #F3F3F3;
-	border: 1px solid #f3f3f3;
+table tbody tr{ background: #F3F3F3; }
+table tbody tr td{
+	padding: 10px 5px;
 }
+	table tbody tr td .close{
+		background: #FF2626;
+		color: #FFF;
+		padding: 5px 10px;
+	}
+	table tbody tr td .open{
+		background: #00D96D;
+		color: #FFF;
+		padding: 5px 10px;
+	}
 .controls{
 	margin: 0 auto;
 	width: 90%;
@@ -96,6 +151,63 @@ table tbody tr{
 	font-size: 18px;
 	margin-right: 10px;
 }
+
+.admin{
+	margin: 0 auto;
+	width: 320px;
+}
+	.admin h2{ text-align: center; }
+	.admin input[type="text"],
+	.admin input[type="email"],
+	.admin input[type="password"]{
+		padding: 10px;
+		width: 100%;;
+	}
+	.admin input[type="submit"]{
+		background: #1188D4;
+		border: none;
+		color: #FFF;
+		cursor: pointer;
+		width: 100%;
+		padding: 20px;
+	}
+
+.search{ 
+	padding: 20px 0; 
+	overflow: hidden;
+}
+	.search	label{
+		font-weight: bold;
+	}
+	.search input{
+	    -webkit-appearance: none;
+	    background-color: white;
+	    -webkit-rtl-ordering: none;
+	    user-select: none;
+	    cursor: auto;
+	    padding: 1px;
+	    border-width: 2px;
+	    border-style: none;
+	    border-color: none;
+	    border-image: none;
+	}    
+	.search input[type="search"]{
+		border: 1px solid #ddd;
+		float: left;
+		display: block;
+		height: 40px;
+		padding: 10px;
+		width: 80%;
+	}
+	.search input[type="submit"]{
+		background: #1188D4;
+		color: #fff;
+		float: left;
+		display: block;
+		height: 40px;
+		padding: 10px;
+		width: 20%;
+	}
 
 .btn{
 	display: inline-block;

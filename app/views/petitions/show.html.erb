@@ -1,3 +1,11 @@
+ <div class="buttons">
+  <% if user_signed_in? %>
+    <%= link_to 'Back', petitions_path , class: 'left' %>
+  <% else %>  
+    <%= link_to 'Back', root_path , class: 'left' %>
+  <% end %>  
+  <%= link_to 'Edit', edit_petition_path(@petition) , class: 'right' %>
+</div>
  <div class="container">  
   <p id="notice"><%= notice %></p>
 
@@ -40,16 +48,14 @@
     <strong>Descripcion:</strong>
     <%= @petition.description %>
   </p>
-
-  <p>
-    <strong>Respuesta:</strong>
-    <%= @petition.amswer %>
-  </p>
+  
+  <% if user_signed_in? %>
+    <p>
+      <strong>Respuesta:</strong>
+      <%= @petition.amswer %>
+    </p>
+  <% end %>  
 
 </div>
 
-<div class="actions">
-<%= link_to 'Edit', edit_petition_path(@petition) %> |
-<%= link_to 'Back', petitions_path %>
-</div>
 

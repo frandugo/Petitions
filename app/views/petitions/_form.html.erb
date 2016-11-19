@@ -44,18 +44,19 @@
     <div class="field">
       <%= f.text_area :description, placeholder: 'Descripcion' %>
     </div>
+    
+    <% if user_signed_in? %>
+      <div class="field checkbox">
+        <label for="state">Resuelta</label>    
+        <%= f.check_box :state %>
+      </div>  
 
-    <div class="field checkbox">
-      <label for="state">Resuelta</label>    
-      <%= f.check_box :state %>
-    </div>  
-
-    <div class="field">
-      <%= f.text_area :amswer, placeholder: 'Respuesta' %>
-    </div>
-
+      <div class="field">
+        <%= f.text_area :amswer, placeholder: 'Respuesta' %>
+      </div>
+    <% end %>
     <div class="controls">
-      <%= f.submit class: 'btn medium blue' %>
+      <%= f.submit 'Enviar Peticion', class: 'btn medium blue' %>
     </div>
   <% end %>
   </div>

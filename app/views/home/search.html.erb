@@ -1,0 +1,17 @@
+ <div class="buttons">
+	<%= link_to 'Registrar peticion', new_petition_path, class: 'left blue' %>
+	<%= link_to 'Login Administradores', new_user_session_path, class: 'right' %>
+ </div>
+ <div class="container">
+	<div class="search">
+		<%= search_form_for @q do |f| %>
+
+		  # Search if the name field contains...
+		  <label>Buscar peticion por Cedula</label>
+		  <%= f.search_field :identity %>
+
+		  <%= f.submit %>
+
+		<% end %>
+	</div>
+ </div>

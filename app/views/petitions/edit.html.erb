@@ -1,13 +1,12 @@
- <div class="container">
+<div class="buttons">
+	<%= link_to 'Back', petitions_path, class: 'left' %>
+	<%= link_to 'Show', @petition, class: 'right' %>
+</div>
+<div class="container">
 
 <h1 class="title">Responder al Usuario</h1>
 
 <%= render 'form', petition: @petition %>
-
-<div class="controls">
-<%= link_to 'Show', @petition %> |
-<%= link_to 'Back', petitions_path %>
-</div>
 
 </div>
 

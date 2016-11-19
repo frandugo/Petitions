@@ -1,5 +1,6 @@
 class PetitionsController < ApplicationController
   before_action :set_petition, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:new, :show, :update, :edit, :destroy, :create, :search]
 
   # GET /petitions
   # GET /petitions.json
@@ -7,15 +8,22 @@ class PetitionsController < ApplicationController
     @petitions = Petition.all
   end
 
-  # GET /petitions/1
-  # GET /petitions/1.json
-  def show
+
+  def index
+    @petitions = Petition.all
   end
 
   # GET /petitions/new
   def new
     @petition = Petition.new
   end
+
+  # GET /petitions/1
+  # GET /petitions/1.json
+  def show
+  end
+
+  
 
   # GET /petitions/1/edit
   def edit
@@ -71,4 +79,16 @@ class PetitionsController < ApplicationController
     def petition_params
       params.require(:petition).permit(:name, :identity, :date, :email, :direccion, :country, :city, :description, :amswer, :state)
     end
+
+  protected
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to new_user_session_path, :notice => 'Para responder Tienes que loguearte'
+        ## if you want render 404 page
+        ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+      end
+    end
+
 end
