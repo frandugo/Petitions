@@ -9,12 +9,11 @@
  </div>
  <div class="container">
 	<div class="search">
-		<%#= search_form_for @search do |f| %>
 
 		<%= search_form_for @search, url: search_petitions_path, html: { method: :post }  do |f| %>
 
-		  <%= f.label :name_cont, "Buscar peticiones por nombre"%>
-		  <%= f.search_field :name_cont %>
+		  <%= f.label :identity_cont, "Busque la referencia de su peticion por cedula"%>
+		  <%= f.search_field :identity_cont %>
 
 		  <%= f.submit "Buscar Peticion" %>
 
@@ -31,7 +30,7 @@
 	      <th>Direccion</th>
 	      <th>Descripcion</th>
 	      <th><%= sort_link @search, :state, "Estado" %></th>
-		  <th></th>
+		  <th>Accion</th>
 	    </tr>
 	  </thead>
 
@@ -51,10 +50,16 @@
 	             <span class="open">Abierta</span>
 	          <% end %>  
 	        </td>
-	        <td><%= link_to 'Ver Respuesta', petition %></td>
+	        <td>
+	        	<% if petition.state == true %>
+	        		<%= link_to 'Ver Respuesta', petition %>
+	        	<% else %>
+					Sin Responder	
+	        	<% end %>		
+	        </td>
 	      </tr>
 	    <% end %>
 	  </tbody>
 	</table>
-
+	<%= image_tag "gestion-de-pagos.jpg" %>
  </div>

@@ -3,6 +3,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="title">Dashboard para responder las peticiones de los usuarios<br><span>Las petciones en estado cerrado ya han sido respondidas antes</span></h1>
+ <div class="buttons">
+    <%= link_to 'Back',root_path, class: 'left' %>
+    <%= link_to 'Salir', destroy_user_session_path, :method => :delete, class: 'right red' %>
+ </div>
 <table>
   <thead>
     <tr>

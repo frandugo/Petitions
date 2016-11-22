@@ -4,7 +4,7 @@
   <% else %>  
     <%= link_to 'Back', root_path , class: 'left' %>
   <% end %>  
-  <%= link_to 'Edit', edit_petition_path(@petition) , class: 'right' %>
+   <% if user_signed_in? %> <%= link_to 'Edit', edit_petition_path(@petition) , class: 'right' %> <% end %>
 </div>
  <div class="container">  
   <p id="notice"><%= notice %></p>
@@ -49,7 +49,7 @@
     <%= @petition.description %>
   </p>
   
-  <% if user_signed_in? %>
+  <% if @petition.amswer != "" %>
     <p>
       <strong>Respuesta:</strong>
       <%= @petition.amswer %>

@@ -55,6 +55,7 @@ header{
 	    background: #FF2626;
 	    color: #FFF;
 	}
+.dashboard .buttons{ width: 100%; }	
 .dashboard{
 	margin: 0 auto;
 	width: 95%;
@@ -66,7 +67,7 @@ header{
 	padding: 20px;
 	width: 70%;
 }
-
+.container img{ width: 100%; }
 .title{
 	font-weight: 300;
 	font-size: 25px;

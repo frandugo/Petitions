@@ -5,12 +5,7 @@ class PetitionsController < ApplicationController
   # GET /petitions
   # GET /petitions.json
   def index
-    @petitions = Petition.all
-  end
-
-
-  def index
-    @petitions = Petition.all
+    @petitions = Petition.where(state: false)
   end
 
   # GET /petitions/new
